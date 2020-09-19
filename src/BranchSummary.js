@@ -2,6 +2,7 @@ import { getByPlaceholderText } from "@testing-library/react";
 import React from "react";
 //
 function MyComponent() {
+  debugger;
   const [namea, eeeee] = React.useState("hi");
   const plans = [
     {
@@ -15,6 +16,9 @@ function MyComponent() {
       validityInYears: 3,
     },
   ];
+
+  //plans[0].name = namea;
+  plans[1].name = namea;
   return (
     <div>
       <div>
