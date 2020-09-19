@@ -1,7 +1,7 @@
-import { getByPlaceholderText } from "@testing-library/react";
+import { Typography } from "@material-ui/core";
 import React from "react";
 //
-function MyComponent() {
+const MyComponent = () => {
   debugger;
   const [namea, eeeee] = React.useState("hi");
   const plans = [
@@ -45,5 +45,20 @@ function MyComponent() {
       </div>
     </div>
   );
-}
-export default MyComponent;
+};
+
+const BranchSummary4 = () => {
+  return (
+    <div>
+      <Typography variant="h6" gutterBottom>
+        WeCare - Franston
+      </Typography>
+      <Typography variant="subtitle2" gutterBottom>
+        38 Napien Highway,Frankston ,VIC, 3600, Australia
+      </Typography>
+      <hr />
+    </div>
+  );
+};
+
+export { BranchSummary4, MyComponent };

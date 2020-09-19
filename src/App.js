@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import BranchSummary from "./BranchSummary";
+import { BranchSummary4, MyComponent } from "./BranchSummary";
 
 class App extends React.Component {
   constructor(props) {
@@ -38,7 +38,8 @@ class App extends React.Component {
         </p>
         <table>
           <tr>
-            <BranchSummary></BranchSummary>
+            <MyComponent></MyComponent>
+            <BranchSummary4></BranchSummary4>
           </tr>
         </table>
       </form>
