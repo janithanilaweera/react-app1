@@ -17,7 +17,7 @@ function MyComponent() {
     },
   ];
 
-  //plans[0].name = namea;
+  plans[0].name = namea;
   plans[1].name = namea;
   return (
     <div>
