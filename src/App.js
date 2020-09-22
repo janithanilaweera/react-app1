@@ -1,9 +1,12 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Person from './Person';
 import { BranchSummary4, MyComponent } from "./BranchSummary";
 
 class App extends React.Component {
+  me  = new Person('Baptiste', 'Vannesson');
+  you = new Person('David', 'Choi');
   constructor(props) {
     alert("Construct");
     super(props);
@@ -31,7 +34,7 @@ class App extends React.Component {
         <p>
           <input
             type="text"
-            value={this.state.field2}
+            value={this.me.lastName}
             onChange={(e) => this.update("field2", e)}
           />
           {this.state.field2}

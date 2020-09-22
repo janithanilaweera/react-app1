@@ -1,9 +1,11 @@
 import { Typography } from "@material-ui/core";
-import React from "react";
+import { User1 } from "./Person";
+import React, { useState } from "react";
 //
 const MyComponent = () => {
   debugger;
-  const [namea, eeeee] = React.useState("hi");
+  const [namea, eeeee] = useState("hi");
+
   const plans = [
     {
       name: "Silver500",
@@ -24,6 +26,7 @@ const MyComponent = () => {
       <div>
         <input value={namea} onChange={(e) => eeeee(e.target.value)} />
         {namea}
+
         <ul>
           <li> {namea}</li>
         </ul>
