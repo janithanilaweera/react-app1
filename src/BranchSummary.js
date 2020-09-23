@@ -1,8 +1,8 @@
 import { Typography } from "@material-ui/core";
-import { User1 } from "./Person";
 import React, { useState } from "react";
-//
-const MyComponent = () => {
+import {Person} from  "./Person";
+
+const MyComponent = (props) => {
   debugger;
   const [namea, eeeee] = useState("hi");
 
@@ -19,7 +19,7 @@ const MyComponent = () => {
     },
   ];
 
-  plans[0].name = namea;
+  plans[0].name = props.arg; // this arg is parameter coming from APP.js
   plans[1].name = namea;
   return (
     <div>
@@ -50,7 +50,7 @@ const MyComponent = () => {
   );
 };
 
-const BranchSummary4 = () => {
+function BranchSummary4() {
   return (
     <div>
       <Typography variant="h6" gutterBottom>
@@ -62,6 +62,12 @@ const BranchSummary4 = () => {
       <hr />
     </div>
   );
-};
+}
+
+const tweet = (props)=> {
+
+
+    return
+}
 
 export { BranchSummary4, MyComponent };

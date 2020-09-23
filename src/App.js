@@ -1,12 +1,14 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Person from './Person';
+import Person from "./Person";
 import { BranchSummary4, MyComponent } from "./BranchSummary";
 
 class App extends React.Component {
-  me  = new Person('Baptiste', 'Vannesson');
-  you = new Person('David', 'Choi');
+  debugger;
+  me = new Person("Baptiste", "Vannesson");
+  you = new Person("David", "Choi");
+
   constructor(props) {
     alert("Construct");
     super(props);
@@ -41,7 +43,16 @@ class App extends React.Component {
         </p>
         <table>
           <tr>
-            <MyComponent></MyComponent>
+            <MyComponent
+              this
+              is
+              how
+              pass
+              parameter
+              to
+              MyComponent
+              arg={this.me.firstName}
+            />
             <BranchSummary4></BranchSummary4>
           </tr>
         </table>
