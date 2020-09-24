@@ -19,8 +19,12 @@ const MyComponent = (props) => {
     },
   ];
 
-  plans[0].name = props.arg; // this arg is parameter coming from APP.js
-  plans[1].name = namea;
+  plans[0].name = props.arg.field1; // this arg is parameter coming from APP.js
+  plans[0].premiumInDollars = props.arg.field2
+
+    plans[1].name = namea;
+    plans[0].premiumInDollars = props.arg.field2
+
   return (
     <div>
       <div>

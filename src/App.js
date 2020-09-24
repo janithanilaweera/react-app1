@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Person from "./Person";
+import axios from "axios";
 import { BranchSummary4, MyComponent } from "./BranchSummary";
 
 class App extends React.Component {
@@ -12,20 +13,19 @@ class App extends React.Component {
   constructor(props) {
     alert("Construct");
     super(props);
-    this.state = {
+    this.state = [{
       field1: "Default 1",
       field2: "Default 2",
-    };
+        }];
+    this.aapi.get('/').then(res => {console.log(res.data)})
   }
 
-  update = (name, e) => {
-    this.setState({ [name]: e.target.value });
-  };
-
+    update = (name, e) => {this.setState({ [name]: e.target.value });};
+    aapi = axios.create({baseURL: 'http://172.20.10.6:8081/allprice/'});
   render() {
     return (
       <form>
-        <p>
+        <p> field1 :
           <input
             type="text"
             value={this.state.field1}
@@ -33,13 +33,13 @@ class App extends React.Component {
           />
           {this.state.field1}
         </p>
-        <p>
+        <p> field2 :
           <input
             type="text"
-            value={this.me.lastName}
+            value={this.me.firstName}
             onChange={(e) => this.update("field2", e)}
           />
-          {this.state.field2}
+          {this.state.field1}
         </p>
         <table>
           <tr>
@@ -51,7 +51,7 @@ class App extends React.Component {
               parameter
               to
               MyComponent
-              arg={this.me.firstName}
+              arg={this.state}
             />
             <BranchSummary4></BranchSummary4>
           </tr>
