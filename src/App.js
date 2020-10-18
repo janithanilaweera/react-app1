@@ -4,11 +4,14 @@ import "./App.css";
 import Person from "./Person";
 import axios from "axios";
 import { BranchSummary4, MyComponent } from "./BranchSummary";
+import Person2 from "./Person2";
 
-class App extends React.Component {
+export const test = Person;
+
+    class App extends React.Component {
   debugger;
-  me = new Person("Baptiste", "Vannesson");
-  you = new Person("David", "Choi");
+
+
 
   constructor(props) {
     alert("Construct");
@@ -18,7 +21,9 @@ class App extends React.Component {
       field2: "Default 2",
         }];
     this.aapi.get('/').then(res => {console.log(res.data)})
-  }
+    Person.firstName='jay';
+
+        }
 
     update = (name, e) => {this.setState({ [name]: e.target.value });};
     aapi = axios.create({baseURL: 'http://172.20.10.6:8081/allprice/'});
@@ -36,7 +41,7 @@ class App extends React.Component {
         <p> field2 :
           <input
             type="text"
-            value={this.me.firstName}
+            value={Person.firstName}
             onChange={(e) => this.update("field2", e)}
           />
           {this.state.field1}

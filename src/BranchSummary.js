@@ -1,10 +1,13 @@
 import { Typography } from "@material-ui/core";
 import React, { useState } from "react";
-import {Person} from  "./Person";
+import Person from  "./Person";
+import test from "./Person";
+
+
 
 const MyComponent = (props) => {
   debugger;
-  const [namea, eeeee] = useState("hi");
+  const [namea, eeeee] = useState(test.firstName);
 
   const plans = [
     {
@@ -19,14 +22,15 @@ const MyComponent = (props) => {
     },
   ];
 
-  plans[0].name = props.arg.field1; // this arg is parameter coming from APP.js
+        plans[0].name = props.arg.field1; // this arg is parameter coming from APP.js
   plans[0].premiumInDollars = props.arg.field2
 
     plans[1].name = namea;
     plans[0].premiumInDollars = props.arg.field2
-
+     Person.fName('janitha');
   return (
-    <div>
+    <div>sddasda
+        <input value={namea}
       <div>
         <input value={namea} onChange={(e) => eeeee(e.target.value)} />
         {namea}
@@ -55,7 +59,8 @@ const MyComponent = (props) => {
 };
 
 function BranchSummary4() {
-  return (
+
+        return (
     <div>
       <Typography variant="h6" gutterBottom>
         WeCare - Franston
