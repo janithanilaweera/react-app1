@@ -30,7 +30,7 @@ const MyComponent = (props) => {
      Person.fName('janitha');
   return (
     <div>sddasda
-        <input value={namea}
+        <input value={namea} />
       <div>
         <input value={namea} onChange={(e) => eeeee(e.target.value)} />
         {namea}
